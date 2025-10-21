@@ -218,13 +218,47 @@ header nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-.join-us .primary-btn {
+/* تنسيقات خاصة بالنموذج */
+.join-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
     background-color: #ffffff;
-    color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
 }
 
-.join-us .primary-btn:hover {
-    background-color: var(--light-bg);
+.join-form .form-group {
+    margin-bottom: 20px;
+}
+
+.join-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-text); /* لون النص داخل النموذج */
+}
+
+.join-form input[type="text"],
+.join-form input[type="tel"],
+.join-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    text-align: right;
+}
+
+.join-form .submit-btn {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 12px 0;
+    /* تعيين الألوان من primary-color */
+    background-color: var(--secondary-color);
+    color: #ffffff;
 }
 
 /* قسم التواصل */
