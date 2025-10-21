@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سريع: لخدمات التوصيل والمندوبين</title>
+    <title>سريع: لخدمات التوصيل والمناديب</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -82,9 +82,34 @@
     <section id="join-us" class="section join-us">
         <div class="container">
             <h3>انضم كـ مندوب "سريع"</h3>
-            <p>كن جزءاً من فريقنا، وابنِ مصدر دخل إضافي بمرونة تامة. مكافآت تنافسية وساعات عمل مرنة.</p>
-            <a href="mailto:careers@saree.com" class="btn primary-btn">سجل الآن</a>
-        </div>
+            <p>كن جزءاً من فريقنا، وابنِ مصدر دخل إضافي بمرونة تامة. املأ النموذج أدناه لبدء التسجيل.</p>
+            
+            <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="join-form">
+                <div class="form-group">
+                    <label for="full-name">الاسم الكامل:</label>
+                    <input type="text" id="full-name" name="الاسم_الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الجوال:</label>
+                    <input type="tel" id="phone" name="رقم_الجوال" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" name="المدينة" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport">وسيلة التوصيل:</label>
+                    <select id="transport" name="وسيلة_التوصيل" required>
+                        <option value="">-- اختر وسيلة --</option>
+                        <option value="سيارة">سيارة</option>
+                        <option value="دراجة_نارية">دراجة نارية</option>
+                        <option value="غير_ذلك">غير ذلك</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn primary-btn submit-btn">إرسال طلب الانضمام</button>
+            </form>
+            </div>
     </section>
 
     <section id="contact" class="section contact">
