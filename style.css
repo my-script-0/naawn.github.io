@@ -1,303 +1,145 @@
-/* إعادة الضبط الأساسية والخط */
-body {
-    font-family: 'Cairo', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f8f9fa;
-    color: #343a40;
-    direction: rtl; /* اتجاه النص من اليمين لليسار */
-    text-align: right;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سريع: لخدمات التوصيل والمناديب</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+    <header>
+        <div class="container">
+            <h1>سريع</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#request-delivery">اطلب توصيل</a></li>
+                    <li><a href="#join-us">انضم إلينا (مندوب)</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-/* الألوان الأساسية */
-:root {
-    --primary-color: #007bff; /* أزرق أساسي */
-    --secondary-color: #28a745; /* أخضر للمناديب/العمل */
-    --light-bg: #e9ecef;
-    --dark-text: #343a40;
-}
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>توصيل أسرع، حياة أسهل.</h2>
+            <p>حلول توصيل متكاملة للمتاجر والأفراد، مع شبكة واسعة من المناديب الموثوقين.</p>
+            <a href="#request-delivery" class="btn primary-btn">اطلب خدمتك الآن</a>
+            <a href="#join-us" class="btn secondary-btn">انضم كـ مندوب</a>
+        </div>
+    </section>
 
-/* الهيدر (شريط التنقل) */
-header {
-    background-color: #ffffff;
-    padding: 15px 0;
-    border-bottom: 3px solid var(--primary-color);
-}
+    <section id="services" class="section services">
+        <div class="container">
+            <h3>خدماتنا</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-truck-fast"></i>
+                    <h4>توصيل سريع</h4>
+                    <p>التوصيل في نفس اليوم للمناطق القريبة.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-store"></i>
+                    <h4>توصيل للمتاجر الإلكترونية</h4>
+                    <p>حلول متكاملة لربط متجرك بشبكة التوصيل لدينا.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>مندوب خاص</h4>
+                    <p>تكليف مندوب لتوصيل أو إنهاء مهام محددة لك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="request-delivery" class="section request-delivery">
+        <div class="container">
+            <h3>تقديم طلب توصيل جديد</h3>
+            <p>املأ بيانات طلبك وسنتواصل معك لتأكيد التفاصيل وتكليف المندوب.</p>
+            
+            <form action="https://formspree.io/f/mkgqaznv" method="POST" class="delivery-form">
+                <input type="hidden" name="_subject" value="طلب توصيل جديد - من الموقع">
+                
+                <div class="form-group">
+                    <label for="client-name">اسم العميل/الشركة:</label>
+                    <input type="text" id="client-name" name="اسم_العميل" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-phone">رقم هاتف العميل للتواصل:</label>
+                    <input type="tel" id="client-phone" name="هاتف_العميل" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-location">مكان الاستلام (العنوان بالتفصيل):</label>
+                    <input type="text" id="pickup-location" name="مكان_الاستلام" required>
+                </div>
+                <div class="form-group">
+                    <label for="dropoff-location">مكان التسليم (العنوان بالتفصيل):</label>
+                    <input type="text" id="dropoff-location" name="مكان_التسليم" required>
+                </div>
+                <div class="form-group">
+                    <label for="item-details">تفاصيل الشحنة/الطلب (مثل الحجم والوزن):</label>
+                    <textarea id="item-details" name="تفاصيل_الشحنة" rows="3" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary-btn submit-btn">إرسال طلب التوصيل</button>
+            </form>
+        </div>
+    </section>
 
-header h1 {
-    color: var(--primary-color);
-    margin: 0;
-    float: right;
-    font-size: 28px;
-}
+    <section id="join-us" class="section join-us">
+        <div class="container">
+            <h3>انضم كـ مندوب "سريع" (تسجيل المناديب)</h3>
+            <p>كن جزءاً من فريقنا، وابنِ مصدر دخل إضافي بمرونة تامة. املأ النموذج أدناه لبدء التسجيل.</p>
+            
+            <form action="https://formspree.io/f/mkgqaznv" method="POST" class="join-form">
+                <input type="hidden" name="_subject" value="طلب انضمام مندوب جديد">
 
-header nav {
-    float: left;
-}
+                <div class="form-group">
+                    <label for="full-name">الاسم الكامل:</label>
+                    <input type="text" id="full-name" name="الاسم_الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الجوال:</label>
+                    <input type="tel" id="phone" name="رقم_الجوال" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" name="المدينة" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport">وسيلة التوصيل:</label>
+                    <select id="transport" name="وسيلة_التوصيل" required>
+                        <option value="">-- اختر وسيلة --</option>
+                        <option value="سيارة">سيارة</option>
+                        <option value="دراجة_نارية">دراجة نارية</option>
+                        <option value="غير_ذلك">غير ذلك</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn secondary-btn submit-btn">إرسال طلب الانضمام</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h3>تواصل معنا</h3>
+            <p>لدينا فريق دعم جاهز لخدمتك على مدار الساعة.</p>
+            <p><i class="fas fa-phone"></i> **هاتف:** 966500000000+</p>
+            <p><i class="fas fa-envelope"></i> **بريد إلكتروني:** <a href="mailto:info@saree.com">info@saree.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> **الموقع:** الرياض، المملكة العربية السعودية</p>
+        </div>
+    </section>
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 سريع لخدمات التوصيل. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-/* الأزرار العامة */
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    margin: 5px 10px 5px 0;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: center;
-    border: none;
-}
-
-.primary-btn {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.primary-btn:hover {
-    background-color: #0056b3;
-}
-
-.secondary-btn {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-}
-
-.secondary-btn:hover {
-    background-color: #218838;
-}
-
-/* الأقسام العامة */
-.section {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.section h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--light-bg);
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-/* قسم البطل (Hero Section) */
-.hero {
-    background: var(--light-bg);
-    color: var(--dark-text);
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: var(--dark-text);
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-/* شبكة الخدمات */
-.service-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.service-item {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    min-width: 250px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-}
-
-.service-item i {
-    font-size: 40px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.service-item h4 {
-    font-size: 22px;
-    color: var(--dark-text);
-}
-
-/* قسم كيف نعمل؟ */
-.how-it-works {
-    background-color: #ffffff;
-}
-
-.steps-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.step-item {
-    width: 30%;
-    min-width: 250px;
-    text-align: center;
-    padding: 20px;
-}
-
-.step-number {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.step-item h4 {
-    color: var(--dark-text);
-    margin-top: 0;
-}
-
-/* قسم انضم إلينا (Join Us) */
-.join-us {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 60px 0;
-}
-
-.join-us h3 {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.5);
-}
-
-.join-us p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-/* تنسيقات خاصة بالنموذج */
-.join-form {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: right;
-}
-
-.join-form .form-group {
-    margin-bottom: 20px;
-}
-
-.join-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-text); /* لون النص داخل النموذج */
-}
-
-.join-form input[type="text"],
-.join-form input[type="tel"],
-.join-form select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    box-sizing: border-box; 
-    text-align: right;
-}
-
-.join-form .submit-btn {
-    width: 100%;
-    margin-top: 15px;
-    font-size: 18px;
-    padding: 12px 0;
-    /* تعيين الألوان من primary-color */
-    background-color: var(--secondary-color);
-    color: #ffffff;
-}
-
-/* قسم التواصل */
-.contact p {
-    font-size: 18px;
-    margin: 15px 0;
-}
-
-.contact i {
-    color: var(--primary-color);
-    margin-left: 10px;
-}
-
-/* الفوتر (التذييل) */
-footer {
-    background-color: #343a40;
-    color: #adb5bd;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* التجاوب (Responsive Design) للشاشات الصغيرة */
-@media (max-width: 768px) {
-    header h1, header nav {
-        float: none;
-        text-align: center;
-    }
-    header nav ul {
-        margin-top: 10px;
-    }
-    header nav ul li {
-        margin: 0 10px;
-    }
-    .hero h2 {
-        font-size: 36px;
-    }
-    .service-item, .step-item {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
+</body>
+</html>
